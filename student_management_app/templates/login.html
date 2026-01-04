@@ -5,49 +5,105 @@
 
 <style>
 .login-page {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover no-repeat;
     min-height: 100vh;
+    position: relative;
 }
+
+.login-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+    z-index: 1;
+}
+
 .login-box {
     margin: 7% auto;
+    position: relative;
+    z-index: 10;
 }
+
 .card {
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     border: none;
+    background: transparent;
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .login-card-body {
-    padding: 2rem;
-    border-radius: 15px;
+    padding: 2.5rem;
+    border-radius: 20px;
+    background: transparent;
 }
-.login-logo a {
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-    text-decoration: none;
+
+.login-logo a { color: #FFD700; font-size: 2.5rem; font-weight: 900; text-decoration: none; text-shadow: 3px 3px 6px rgba(0,0,0,0.9), 0 0 20px rgba(255, 215, 0, 0.5); position: relative; z-index: 10; display: block; text-align: center; margin-bottom: 20px; transition: all 0.3s ease; white-space: nowrap; }
+
+.login-logo a:hover {
+    color: #FFD700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6);
+    transform: scale(1.05);
 }
+
 .btn-primary {
     background: linear-gradient(45deg, #667eea, #764ba2);
     border: none;
-    border-radius: 25px;
-    padding: 12px;
+    border-radius: 30px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    font-weight: 600;
 }
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
+}
+
 .form-control {
-    border-radius: 25px;
-    border: 2px solid #e9ecef;
-    padding: 12px 20px;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    color: white;
 }
+
+.form-control:hover {
+    border-color: rgba(102, 126, 234, 0.8);
+    box-shadow: 0 0 15px rgba(102, 126, 234, 0.5);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.login-box-msg {
+    color: white;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    transition: all 0.3s ease;
+}
+
+.login-box-msg:hover {
+    color: #87CEEB;
+    text-shadow: 0 0 15px rgba(135, 206, 235, 0.8);
+}
+
 .input-group-text {
-    border-radius: 0 25px 25px 0;
-    border: 2px solid #e9ecef;
+    border-radius: 0 30px 30px 0;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     border-left: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
 }
 </style>
 
     <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="{% url 'login' %}"><b>Navodaya </b>University</a>
+    <a href="{% url 'login' %}"><b>Navodaya University</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">

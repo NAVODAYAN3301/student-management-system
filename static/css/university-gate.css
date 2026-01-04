@@ -1,0 +1,317 @@
+/* University Gate Animated Background */
+.university-gate-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #87ceeb 100%);
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Gate Structure */
+.gate-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 400px;
+}
+
+.gate-pillar {
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+    height: 350px;
+    background: linear-gradient(to bottom, #8B4513, #A0522D);
+    border-radius: 8px 8px 0 0;
+}
+
+.gate-pillar.left { left: 0; }
+.gate-pillar.right { right: 0; }
+
+.gate-arch {
+    position: absolute;
+    top: 50px;
+    left: 60px;
+    width: 480px;
+    height: 120px;
+    border: 15px solid #8B4513;
+    border-bottom: none;
+    border-radius: 240px 240px 0 0;
+}
+
+.gate-sign {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2C1810;
+    color: #FFD700;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Animated Students */
+.student {
+    position: absolute;
+    bottom: 0;
+    width: 30px;
+    height: 60px;
+    animation: walkStudent 8s linear infinite;
+}
+
+.student-body {
+    width: 20px;
+    height: 35px;
+    background: #4169E1;
+    border-radius: 10px 10px 5px 5px;
+    margin: 0 auto;
+}
+
+.student-head {
+    width: 15px;
+    height: 15px;
+    background: #FDBCB4;
+    border-radius: 50%;
+    margin: 0 auto 5px;
+}
+
+.student-legs {
+    width: 20px;
+    height: 20px;
+    background: #000080;
+    margin: 0 auto;
+    border-radius: 0 0 5px 5px;
+}
+
+.student:nth-child(1) { left: -50px; animation-delay: 0s; }
+.student:nth-child(2) { left: -50px; animation-delay: 2s; }
+.student:nth-child(3) { left: -50px; animation-delay: 4s; }
+.student:nth-child(4) { left: -50px; animation-delay: 6s; }
+
+@keyframes walkStudent {
+    0% { left: -50px; }
+    50% { left: 50%; }
+    100% { left: calc(100% + 50px); }
+}
+
+/* Guards */
+.guard {
+    position: absolute;
+    bottom: 0;
+    width: 35px;
+    height: 70px;
+}
+
+.guard.left { left: 80px; }
+.guard.right { right: 80px; }
+
+.guard-body {
+    width: 25px;
+    height: 40px;
+    background: #8B4513;
+    border-radius: 12px 12px 5px 5px;
+    margin: 0 auto;
+}
+
+.guard-head {
+    width: 18px;
+    height: 18px;
+    background: #FDBCB4;
+    border-radius: 50%;
+    margin: 0 auto 5px;
+}
+
+.guard-legs {
+    width: 25px;
+    height: 25px;
+    background: #654321;
+    margin: 0 auto;
+    border-radius: 0 0 8px 8px;
+}
+
+.guard-hat {
+    width: 20px;
+    height: 8px;
+    background: #000;
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+    top: -23px;
+}
+
+/* Floating Clouds */
+.cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    animation: floatCloud 20s linear infinite;
+}
+
+.cloud:before {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+}
+
+.cloud1 {
+    width: 80px;
+    height: 30px;
+    top: 20%;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.cloud1:before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 10px;
+}
+
+.cloud2 {
+    width: 60px;
+    height: 25px;
+    top: 15%;
+    left: -80px;
+    animation-delay: 10s;
+}
+
+.cloud2:before {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: 15px;
+}
+
+@keyframes floatCloud {
+    0% { left: -100px; }
+    100% { left: calc(100% + 100px); }
+}
+
+/* Birds */
+.bird {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    animation: flyBird 15s linear infinite;
+}
+
+.bird:before {
+    content: '🕊️';
+    font-size: 16px;
+}
+
+.bird1 {
+    top: 25%;
+    left: -30px;
+    animation-delay: 0s;
+}
+
+.bird2 {
+    top: 30%;
+    left: -30px;
+    animation-delay: 5s;
+}
+
+.bird3 {
+    top: 20%;
+    left: -30px;
+    animation-delay: 10s;
+}
+
+@keyframes flyBird {
+    0% { left: -30px; transform: translateY(0px); }
+    25% { transform: translateY(-10px); }
+    50% { transform: translateY(5px); }
+    75% { transform: translateY(-5px); }
+    100% { left: calc(100% + 30px); transform: translateY(0px); }
+}
+
+/* Trees */
+.tree {
+    position: absolute;
+    bottom: 0;
+}
+
+.tree-trunk {
+    width: 15px;
+    height: 80px;
+    background: #8B4513;
+    margin: 0 auto;
+}
+
+.tree-leaves {
+    width: 60px;
+    height: 60px;
+    background: #228B22;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: -30px;
+    animation: sway 4s ease-in-out infinite;
+}
+
+.tree1 { left: 10%; }
+.tree2 { right: 10%; }
+
+@keyframes sway {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(3deg); }
+}
+
+/* Sun */
+.sun {
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, #FFD700, #FFA500);
+    border-radius: 50%;
+    animation: rotateSun 20s linear infinite;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+}
+
+.sun:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, transparent 60%, rgba(255, 215, 0, 0.3) 70%);
+}
+
+@keyframes rotateSun {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Login Box Enhancement */
+.login-page {
+    position: relative;
+    z-index: 1;
+}
+
+.login-box {
+    position: relative;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}

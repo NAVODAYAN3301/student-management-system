@@ -13,6 +13,12 @@ DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = ["*"]
 
+# CSRF Settings
+CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1:8000',
+    'http://localhost:8000',
+]
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
